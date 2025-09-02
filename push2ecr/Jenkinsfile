@@ -17,6 +17,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'image', variable: 'image')]) {
                 echo "Building image now"
+                cd csv-filter-ui
                 sh 'docker build -t $image:$version .'
                 } 
             } 
